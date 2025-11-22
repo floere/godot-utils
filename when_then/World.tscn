@@ -1,0 +1,190 @@
+[gd_scene load_steps=29 format=3 uid="uid://d1voup8qpp4xh"]
+
+[ext_resource type="Script" uid="uid://bghta77r4f7d1" path="res://Player.gd" id="1_2dftf"]
+[ext_resource type="Texture2D" uid="uid://bgmcpsgdx0iim" path="res://icon.svg" id="1_c6gwx"]
+[ext_resource type="Script" uid="uid://bdakrrkyec1yd" path="res://WhenThen.gd" id="3_bcbcq"]
+[ext_resource type="Script" uid="uid://bl53qkfo45wi8" path="res://event_sources/PlayerEventSource.gd" id="4_wygdx"]
+[ext_resource type="Script" uid="uid://bap1hxmlm7iak" path="res://data_extractors/PlayerDataExtractor.gd" id="5_bah7m"]
+[ext_resource type="Script" uid="uid://v7ifjo0xnyaj" path="res://target_behaviors/VisibleTargetBehavior.gd" id="7_fvag4"]
+[ext_resource type="Script" uid="uid://but142je1p2m0" path="res://target_behaviors/SetLabelTextTargetBehavior.gd" id="7_wygdx"]
+[ext_resource type="Script" uid="uid://cj0ufmb75nmdq" path="res://data_mappings/TriggerIfBelowDataMapping.gd" id="8_bah7m"]
+[ext_resource type="Script" uid="uid://cq8pux38u5urd" path="res://data_mappings/TriggerIfAboveDataMapping.gd" id="9_fv4w7"]
+
+[sub_resource type="Resource" id="Resource_kva58"]
+script = ExtResource("4_wygdx")
+doing = true
+metadata/_custom_type_script = "uid://bl53qkfo45wi8"
+
+[sub_resource type="Resource" id="Resource_f5c0m"]
+script = ExtResource("5_bah7m")
+value = 1
+metadata/_custom_type_script = "uid://bap1hxmlm7iak"
+
+[sub_resource type="Resource" id="Resource_bah7m"]
+script = ExtResource("7_wygdx")
+metadata/_custom_type_script = "uid://but142je1p2m0"
+
+[sub_resource type="Resource" id="Resource_6w02q"]
+script = ExtResource("4_wygdx")
+doing = true
+metadata/_custom_type_script = "uid://bl53qkfo45wi8"
+
+[sub_resource type="Resource" id="Resource_1fphk"]
+script = ExtResource("5_bah7m")
+value = 1
+metadata/_custom_type_script = "uid://bap1hxmlm7iak"
+
+[sub_resource type="Resource" id="Resource_fvag4"]
+script = ExtResource("8_bah7m")
+threshold = -10.0
+metadata/_custom_type_script = "uid://cj0ufmb75nmdq"
+
+[sub_resource type="Resource" id="Resource_gn8l5"]
+script = ExtResource("7_fvag4")
+reset = false
+metadata/_custom_type_script = "uid://v7ifjo0xnyaj"
+
+[sub_resource type="Resource" id="Resource_wygdx"]
+script = ExtResource("4_wygdx")
+doing = true
+metadata/_custom_type_script = "uid://bl53qkfo45wi8"
+
+[sub_resource type="Resource" id="Resource_fv4w7"]
+script = ExtResource("5_bah7m")
+value = 1
+metadata/_custom_type_script = "uid://bap1hxmlm7iak"
+
+[sub_resource type="Resource" id="Resource_b2ar6"]
+script = ExtResource("9_fv4w7")
+threshold = 10.0
+metadata/_custom_type_script = "uid://cq8pux38u5urd"
+
+[sub_resource type="Resource" id="Resource_ee7l0"]
+script = ExtResource("7_fvag4")
+value = false
+reset = false
+initialize = false
+metadata/_custom_type_script = "uid://v7ifjo0xnyaj"
+
+[sub_resource type="Resource" id="Resource_sjtuv"]
+script = ExtResource("4_wygdx")
+doing = true
+metadata/_custom_type_script = "uid://bl53qkfo45wi8"
+
+[sub_resource type="Resource" id="Resource_cvq6i"]
+script = ExtResource("5_bah7m")
+value = 1
+metadata/_custom_type_script = "uid://bap1hxmlm7iak"
+
+[sub_resource type="Resource" id="Resource_6tx0c"]
+script = ExtResource("8_bah7m")
+threshold = -10.0
+metadata/_custom_type_script = "uid://cj0ufmb75nmdq"
+
+[sub_resource type="Resource" id="Resource_0to5b"]
+script = ExtResource("7_fvag4")
+value = false
+reset = false
+initialize = false
+metadata/_custom_type_script = "uid://v7ifjo0xnyaj"
+
+[sub_resource type="Resource" id="Resource_5j71u"]
+script = ExtResource("4_wygdx")
+doing = true
+metadata/_custom_type_script = "uid://bl53qkfo45wi8"
+
+[sub_resource type="Resource" id="Resource_jyqkj"]
+script = ExtResource("5_bah7m")
+value = 1
+metadata/_custom_type_script = "uid://bap1hxmlm7iak"
+
+[sub_resource type="Resource" id="Resource_ydbc3"]
+script = ExtResource("9_fv4w7")
+threshold = 10.0
+metadata/_custom_type_script = "uid://cq8pux38u5urd"
+
+[sub_resource type="Resource" id="Resource_aj1ai"]
+script = ExtResource("7_fvag4")
+reset = false
+metadata/_custom_type_script = "uid://v7ifjo0xnyaj"
+
+[node name="World" type="Node2D" unique_id=1175608452]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=787902327]
+zoom = Vector2(2, 2)
+
+[node name="Player" type="Node2D" parent="." unique_id=1308918095]
+script = ExtResource("1_2dftf")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=698160592]
+texture = ExtResource("1_c6gwx")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1298699441]
+offset_left = -93.0
+offset_top = -159.0
+offset_right = -53.0
+offset_bottom = -119.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=947273609]
+layout_mode = 2
+
+[node name="Speed" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=1366578266]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/Speed" unique_id=1250379679]
+layout_mode = 2
+text = "Speed"
+
+[node name="Value" type="Label" parent="PanelContainer/VBoxContainer/Speed" unique_id=1589791601]
+layout_mode = 2
+text = "Value"
+
+[node name="PlayerSpeedSetLabel" type="Node" parent="PanelContainer/VBoxContainer/Speed/Value" unique_id=1645455111]
+script = ExtResource("3_bcbcq")
+source_node_path = NodePath("../../../../../Player")
+event_source = SubResource("Resource_kva58")
+data_extractor = SubResource("Resource_f5c0m")
+target_behavior = SubResource("Resource_bah7m")
+
+[node name="Visibility" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=914645303]
+layout_mode = 2
+
+[node name="MovingLeft" type="Label" parent="PanelContainer/VBoxContainer/Visibility" unique_id=1423815057]
+layout_mode = 2
+text = "Moving Left!"
+
+[node name="PlayerLeftVisible" type="Node" parent="PanelContainer/VBoxContainer/Visibility/MovingLeft" unique_id=1502605971]
+script = ExtResource("3_bcbcq")
+source_node_path = NodePath("../../../../../Player")
+event_source = SubResource("Resource_6w02q")
+data_extractor = SubResource("Resource_1fphk")
+data_mapping = SubResource("Resource_fvag4")
+target_behavior = SubResource("Resource_gn8l5")
+
+[node name="PlayerRightInvisible" type="Node" parent="PanelContainer/VBoxContainer/Visibility/MovingLeft" unique_id=173477322]
+script = ExtResource("3_bcbcq")
+source_node_path = NodePath("../../../../../Player")
+event_source = SubResource("Resource_wygdx")
+data_extractor = SubResource("Resource_fv4w7")
+data_mapping = SubResource("Resource_b2ar6")
+target_behavior = SubResource("Resource_ee7l0")
+
+[node name="MovingRight" type="Label" parent="PanelContainer/VBoxContainer/Visibility" unique_id=1539921224]
+layout_mode = 2
+text = "Moving Right!"
+
+[node name="PlayerLeftInvisible" type="Node" parent="PanelContainer/VBoxContainer/Visibility/MovingRight" unique_id=1460555934]
+script = ExtResource("3_bcbcq")
+source_node_path = NodePath("../../../../../Player")
+event_source = SubResource("Resource_sjtuv")
+data_extractor = SubResource("Resource_cvq6i")
+data_mapping = SubResource("Resource_6tx0c")
+target_behavior = SubResource("Resource_0to5b")
+
+[node name="PlayerRightVisible" type="Node" parent="PanelContainer/VBoxContainer/Visibility/MovingRight" unique_id=449453682]
+script = ExtResource("3_bcbcq")
+source_node_path = NodePath("../../../../../Player")
+event_source = SubResource("Resource_5j71u")
+data_extractor = SubResource("Resource_jyqkj")
+data_mapping = SubResource("Resource_ydbc3")
+target_behavior = SubResource("Resource_aj1ai")

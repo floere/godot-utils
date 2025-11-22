@@ -19,16 +19,16 @@ var target: Node
 
 func _ready() -> void:
 	if not data_extractor:
-    # Use default DataExtractor (extract nothing).
+	# Use default DataExtractor (extract nothing).
 		data_extractor = DataExtractor.new()
 	if not data_mapping:
-    # Use default DataMapping (map nothing).
+	# Use default DataMapping (map nothing).
 		data_mapping = DataMapping.new()
 	data_mapping._ready()
 
 	target = get_node(target_path) if target_path else get_parent()
 
-	var event_source_node = event_source.connect_to(self)
+	event_source.connect_to(self)
 
 	target_behavior._reset(target, self)
 
